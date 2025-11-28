@@ -23,6 +23,13 @@
             border-left: 4px solid #2196F3;
             margin: 10px 0;
         }
+        .time {
+            background: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
@@ -31,12 +38,41 @@
         <p>Этот файл я закинул самостоятельно из Git-репозитория!</p>
         <p><strong>Студент группы БИСТ-22-ИТ Хагабанов А.А.</strong></p>
         
+        <div class="time">
+            <strong>Текущее время:</strong> 
+            <span id="currentTime">загрузка...</span>
+        </div>
+        
         <div class="update">
-            <strong>Обновление 1:</strong> Добавлено время и стили
+            <strong>Обновление 1:</strong> Добавлено реальное время (обновляется каждую секунду)
         </div>
         <div class="update">
             <strong>Обновление 2:</strong> Добавлен красивый дизайн
         </div>
+        <div class="update">
+            <strong>Обновление 3:</strong> Добавлен JavaScript для динамического времени
+        </div>
     </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('ru-RU', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        
+        // Обновляем время сразу при загрузке
+        updateTime();
+        
+        // И каждую секунду
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
