@@ -2,60 +2,77 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой проект в Jenkins - ОБНОВЛЕНО</title>
+    <title>🚧 DEVELOPMENT ВЕРСИЯ</title>
     <style>
         body { 
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .dev-banner {
+            background: #ffeb3b;
+            color: #333;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
         .container {
-            background: white;
+            background: rgba(255,255,255,0.1);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
-        .update {
-            background: #e7f3ff;
+        .feature {
+            background: rgba(255,255,255,0.2);
             padding: 10px;
-            border-left: 4px solid #2196F3;
             margin: 10px 0;
+            border-radius: 5px;
         }
         .time {
-            background: #fff3cd;
+            background: rgba(255,255,255,0.3);
             padding: 10px;
-            border-left: 4px solid #ffc107;
             margin: 10px 0;
+            border-radius: 5px;
             font-family: monospace;
         }
     </style>
 </head>
 <body>
+    <div class="dev-banner">
+        🚧 РАЗРАБОТКА - DEVELOPMENT BRANCH - НЕ ДЛЯ ПРОДАКШЕНА 🚧
+    </div>
+    
     <div class="container">
-        <h1>Привет! Это мой первый проект в Jenkins</h1>
-        <p>Этот файл я закинул самостоятельно из Git-репозитория!</p>
+        <h1>Development версия проекта</h1>
+        <p>Это тестовая версия для разработки новых функций</p>
         <p><strong>Студент группы БИСТ-22-ИТ Хагабанов А.А.</strong></p>
         
         <div class="time">
-            <strong>Текущее время:</strong> 
-            <span id="currentTime">загрузка...</span>
+            <strong>Время разработки:</strong> 
+            <span id="devTime">загрузка...</span>
         </div>
         
-        <div class="update">
-            <strong>Обновление 1:</strong> Добавлено реальное время (обновляется каждую секунду)
+        <div class="feature">
+            <strong>Новая функция:</strong> Градиентный фон и стеклянный эффект
         </div>
-        <div class="update">
-            <strong>Обновление 2:</strong> Добавлен красивый дизайн
+        <div class="feature">
+            <strong>Статус:</strong> В разработке
         </div>
-        <div class="update">
-            <strong>Обновление 3:</strong> Добавлен JavaScript для динамического времени
+        <div class="feature">
+            <strong>Ветка:</strong> development
+        </div>
+        <div class="feature">
+            <strong>Сборка:</strong> Автоматическая каждые 5 минут
         </div>
     </div>
 
     <script>
-        function updateTime() {
+        function updateDevTime() {
             const now = new Date();
             const timeString = now.toLocaleString('ru-RU', {
                 year: 'numeric',
@@ -65,14 +82,11 @@
                 minute: '2-digit',
                 second: '2-digit'
             });
-            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('devTime').textContent = timeString;
         }
         
-        // Обновляем время сразу при загрузке
-        updateTime();
-        
-        // И каждую секунду
-        setInterval(updateTime, 1000);
+        updateDevTime();
+        setInterval(updateDevTime, 1000);
     </script>
 </body>
 </html>
